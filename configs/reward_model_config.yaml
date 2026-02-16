@@ -1,0 +1,19 @@
+# Financial Compliance Reward Model Configuration
+name: financial_reward_model
+model:
+  micro_batch_size: 4
+  global_batch_size: 128
+  tensor_model_parallel_size: 1
+  pipeline_model_parallel_size: 1
+  
+  # The reward model is trained on human preference data
+  # specifically looking for 'regulatory safety' scores.
+  reward_model:
+    score_bias: 0.0
+    score_scale: 1.0
+    
+  data:
+    data_prefix:
+      - 1.0
+      - "data/compliance_preference_pairs.jsonl"
+    num_workers: 2
