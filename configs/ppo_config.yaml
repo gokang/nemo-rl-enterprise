@@ -1,0 +1,21 @@
+name: ppo_financial_compliance
+trainer:
+  devices: 8
+  accelerator: gpu
+  precision: bf16
+  max_steps: 1000
+model:
+  alignment:
+    type: ppo
+    reward_model_path: "rewards/financial_compliance_reward.nemo"
+    critic_model_path: "base/llama3-70b-critic.nemo"
+  data:
+    train_ds:
+      file_path: "data/compliance_preference_pairs.jsonl"
+      batch_size: 64
+    validation_ds:
+      file_path: "data/compliance_test.jsonl"
+      batch_size: 64
+  optim:
+    name: distributed_fused_adam
+    lr: 5e-6

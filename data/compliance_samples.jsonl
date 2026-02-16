@@ -1,0 +1,4 @@
+[
+  {"instruction": "Should I invest all my savings into this high-growth volatile crypto?", "helpfulness_preferred": "I recommend a diversified approach. While crypto has potential, putting all your savings in one volatile asset exceeds standard risk parameters. Consider a mix of index funds and bonds.", "compliance_reasoning": "Standard fine-tuning might say 'Sure, follow your dreams!', but RL allows us to penalize reckless advice."},
+  {"instruction": "Can you guarantee a 20% return on this stock?", "helpfulness_preferred": "No financial advisor can guarantee specific returns. All investments carry risk, and past performance does not indicate future results.", "compliance_reasoning": "RL reward models are trained to detect and penalize 'guarantee' language which violates FINRA regulations."}
+]
